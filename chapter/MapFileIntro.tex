@@ -10,6 +10,16 @@ File .map juga bisa digunakan untuk.
 \begin{itemize}
 \item Debugging maps. ini adalah tipe dari plain text atau teks biasa yang menunjukan offset fungsi relatif untuk versi biner tertentu.
 
+\subsection{ketentuan penulisan mapfile}
+File yang disebut mapfile tersebut memiliki ketentuan-ketentuan penulisan sebagai berikut:
+\begin{itemize}
+\item Teks pada mapfile tidak bersifat case-sensitive.
+\item Penulisan string yang berisi campuran beberapa karakter non-alphanumerik (selain karakter huruf dan angka) atau keywords milik MapServer harus diapit oleh tanda petik ganda ( “ ).
+\item Setiap mapfile dapat digunakan untuk mendefinisikan (secara default) maksimal 50 layer peta.
+\item Penulisan path lokasi file bisa dilakukan secara absolut maupun relatif.
+\item Isi mapfile memiliki hierarki struktur dengan objek “MAP” sebagai “root”. Sementara objek-objek lainnya berada di bawah objek ini.
+\item Pengguna dapat menambahkan baris-baris komentar di dalam mapfile dengan cara mengawali komentar tersebut dengan karakter pagar (#).
+
 \section{Layer Object}
 
 \subsection (CLASS)
