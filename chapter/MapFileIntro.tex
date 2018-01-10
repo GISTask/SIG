@@ -4,6 +4,39 @@ Untuk memanfaatkan fungsionalitasnya, MapServer akan membutuhkan sebuah mapfile.
 File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. Informasi yang termuat didalamnya adalah layer data apa yang akan digambar, dimana focus geografis petanya, 
 system proyeksi yang digunakan, format apa yang akan digunakan untuk menampilkan gambar, dan cara menentukan legenda dan skala pada peta.
 
+contoh :
+\begin{vebatim}
+MAP
+    NAME "Bandung"
+    STATUS ON
+    SIZE 600 400
+    SYMBOLSET "../etc/symbols.txt"
+    EXTENT 107.474 -7.007 107.735 -6.773
+    UNITS DD
+    SHAPEPATH "../bandung"
+    IMAGECOLOR 255 255 255
+    FONTSET "../etc/fonts.txt"
+
+    #
+    # Start of web interface definition
+    #
+    WEB
+        IMAGEPATH "/ms4w/tmp/ms_tmp/"
+        IMAGEURL "/ms_tmp/"
+    END # WEB
+
+    #
+    # Start of layer definitions
+    #
+    LAYER
+        NAME 'Bandung_Polygon'
+        TYPE POLYGON
+        STATUS DEFAULT
+        DATA band.png
+    END # LAYER
+END # MAP
+\end{verbatim}
+
 \subsection(Tentang MapFile}
 
 File .map juga bisa digunakan untuk.
