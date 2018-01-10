@@ -1,4 +1,4 @@
-e\section{Introduction}
+\section{Introduction}
 
 Untuk memanfaatkan fungsionalitasnya, MapServer akan membutuhkan sebuah mapfile. Mapfile merupakan file teks yang berekstensi .map, yang akan mendeskripsikan apa dan dimana sumber data dan bagaimana cara data tersebut ditampilkan. 
 File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. Informasi yang termuat didalamnya adalah layer data apa yang akan digambar, dimana focus geografis petanya, 
@@ -24,3 +24,10 @@ File yang disebut mapfile tersebut memiliki ketentuan-ketentuan penulisan sebaga
 
 \subsection (CLASS)
 CLASS adalah Sinyal awal dari kelas object. Di dalam lapisan, hanya dengan satu kelas aka digunakan untuk render fitur.  Setiap fitur diuji untuk setiap kelas dalam rangka dimana mereka didefinisikan dalam mapfile.  Kelas pertama yang tidak kalah dengan bi min / max skala ikatan dan ekspresi memeriksa untuk arus fitur akan digunakan untuk render.  Class terbagi antara dua yaitu :
+
+  \subsubsection (CLASSGROUP atau string)
+  Tentukan kelas group yang akan dipertimbangkan dalam render waktu. Object classgroup parameter harus digunakan dalam kombinasi dengan classgroup.
+  \subsubsection (CLASSITEM atau attribute)
+  Item nama dalam atribut tabel yang akan digunakan untuk kelas lookups .
+  \subsubsection (CLUSTER)
+  Sinyal awal dari cluster objek. Konfigurasi cluster menyediakan untuk menggabungkan beberapa fitur dari lapisan menjadi satu ( dikumpulkan ) fitur  hanya berdasarkan relatif posisi. Hanya didukung untuk point layers.
