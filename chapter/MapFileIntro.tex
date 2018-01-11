@@ -58,6 +58,29 @@ File yang disebut mapfile tersebut memiliki ketentuan-ketentuan penulisan sebaga
 \item Isi mapfile memiliki hierarki struktur dengan objek “MAP” sebagai “root”. Sementara objek-objek lainnya berada di bawah objek ini.
 \item Pengguna dapat menambahkan baris-baris komentar di dalam mapfile dengan cara mengawali komentar tersebut dengan karakter pagar (#).
 
+
+\section{MAP Object}
+\subsection (Tentang MAP Object)
+EXTENT adalah output batas dalam unit dari output peta.
+
+\subsection (contoh)
+	\begin {verbatim}
+	MAP
+  	NAME "GOR Yayasan Taruna Bakti"
+  	EXTENT -6.898614, 107.629599 # Geographic
+  	SIZE 800 400
+  	IMAGECOLOR 128 128 255
+	END # MAP
+	\end {verbatim}
+
+	\begin {verbatim}
+	MAP
+  	NAME "Taman Pustaka Bunga"
+  	EXTENT -6.903290, 107.622925 # Geographic
+  	SIZE 800 400
+  	IMAGECOLOR 128 128 255
+	END # MAP
+	\end {verbatim}
 \section{Layer Object}
 
 \subsection (CLASS)
