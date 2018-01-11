@@ -62,10 +62,25 @@ File yang disebut mapfile tersebut memiliki ketentuan-ketentuan penulisan sebaga
 \item Penulisan path lokasi file bisa dilakukan secara absolut maupun relatif.
 \item Isi mapfile memiliki hierarki struktur dengan objek “MAP” sebagai “root”. Sementara objek-objek lainnya berada di bawah objek ini.
 \item Pengguna dapat menambahkan baris-baris komentar di dalam mapfile dengan cara mengawali komentar tersebut dengan karakter pagar (#).
+\item Atribut (field) ditulis didalam kurung siku [] (casesensitive)
+\item Dimulai dengan keyword MAP sebagai puncak hierarki
+
+
+\subsection{Hirarki Mapfile}
+“MAP” merupakan “root”, diikuti objek lain, setiap blok harus diakhiri dengan “END”, 
+contoh:
+\begin{verbatim}
+MAP
+	LAYER
+		....
+	END
+END
+\end{verbatim}
 
 
 \section{MAP Object}
 \subsection (Tentang MAP Object)
+MAP merupakan objek master sebagai wadah menyimpan semua objek lain didalamnya dan tempat mendefinisikan objek dan parameter peta/aplikasi seperti, config, datapattern, debug, status, units, size, extent, fontset, imagecolor, layer, legend, dll.
 EXTENT adalah output batas dalam unit dari output peta.
 
 \subsection (contoh)
