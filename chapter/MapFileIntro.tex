@@ -72,8 +72,9 @@ File yang disebut mapfile tersebut memiliki ketentuan-ketentuan penulisan sebaga
 	\item Pengguna dapat menambahkan baris-baris komentar di dalam mapfile dengan cara mengawali komentar tersebut dengan karakter pagar.
 	\item Atribut (field) ditulis didalam kurung siku [] (case sensitive)
 	\item Dimulai dengan keyword MAP sebagai puncak hierarki
-	\item Untuk MapServer sebelum versi 5, ada default maksimum 200 layer per mapfile, sedangkan untuk MapServer versi 5 atau lebih tidak ada batasan layer. Hal ini dapat diubah dengan mengedit file map.h untuk merubah value dari MSMAXLAYERS menjadi ke jumlah yang diinginkan dengan meng-compile ulang. Berikut adalah batas default lainnya saat menggunakan MapServer dibawah versi 5, MAXCLASSES 250 di-set di map.h,  MAXSTYLES 5 di-set di map.h, dan MAXSYMBOLS 64 di-set di mapsymbol.h
-MapServer versi 5 atau lebih tidak ada limit untuk class,  style, symbol, atau layer.	
+	\item Untuk MapServer sebelum versi 5, ada default maksimum 200 layer per mapfile, 
+	      sedangkan untuk MapServer versi 5 atau lebih tidak ada batasan layer. 
+              Hal ini dapat diubah dengan mengedit file map.h untuk merubah value dari MSMAXLAYERS menjadi ke jumlah yang diinginkan.	
 \end{itemize}
 
 \subsection{Hirarki Mapfile}
@@ -135,3 +136,8 @@ Class terbagi antara dua yaitu :
   Item nama dalam atribut tabel yang akan digunakan untuk kelas lookups .
   \subsubsection{CLUSTER}
   Sinyal awal dari cluster objek. Konfigurasi cluster menyediakan untuk menggabungkan beberapa fitur dari lapisan menjadi satu ( dikumpulkan ) fitur  hanya berdasarkan relatif posisi. Hanya didukung untuk point layers.
+  \subsubsection{COMPOSITE}
+  Satu atau lebih blok KOMPOSIT dapat digunakan untuk memberi sinyal bahwa rendering harus dilakukan sementara dan digabungkan ke gambar peta akhir. 
+  Opsi yang didefinisikan di dalam blok KOMPOSIT akan menentukan bagaimana penggabungan ini harus dilakukan (mis. Dengan menerapkan opacity, composition operator, atau filter piksel).
+  \subsubsection{COMPOSITE}
+
