@@ -46,29 +46,36 @@ Map File ini juga mendefinisikan lapisan peta kita, termasuk sumber data, proyek
 Map File ini harus memiliki ekstensi peta atau MapServer tidak akan mengenalinya.
 File .map juga bisa digunakan untuk.
 \begin{itemize}
-\item Debugging maps. ini adalah tipe dari plain text atau teks biasa yang menunjukan offset fungsi relatif untuk versi biner tertentu.
-\item Uncompiled Quake maps. File-file ini adalah file teks biasa.
-\item Valve's Hammer Editor menyimpan file tingkat dalam format biner, proprietary .rmf atau text-based, yang dapat dibaca manusia. 
-Sebelum versi 4.0.
-\item Selain itu, serial Halo menggunakan file peta untuk level. Duke Nukem 3D menggunakan file peta untuk level buatan pengguna.
-\item .map file juga digunakan oleh MapInfo Professional Geographic Information System.
-\item .MAPs juga diidentifikasi sebagai peta warna. Contoh perangkat lunak semacam itu yang mendukung file peta adalah visualisasi musik G-Force SoundSpectrum.
-\item Bentuk lain dari file .MAP adalah untuk peta gambar HTML. Peta gambar diformat dalam HTML dan membuat area yang dapat diklik pada gambar yang disediakan.
-\item .map file juga digunakan oleh Multi Theft Auto: San Andreas, modifikasi multiplayer untuk Grand Theft Auto: San Andreas.
+	\item Debugging maps. ini adalah tipe dari plain text atau teks biasa yang menunjukan offset fungsi relatif untuk versi biner tertentu.
+	\item Uncompiled Quake maps. File-file ini adalah file teks biasa.
+	\item Valve's Hammer Editor menyimpan file tingkat dalam format biner, proprietary .rmf atau text-based, yang dapat dibaca manusia. Sebelum versi 4.0.
+	\item Selain itu, serial Halo menggunakan file peta untuk level. Duke Nukem 3D menggunakan file peta untuk level buatan pengguna.
+	\item .map file juga digunakan oleh MapInfo Professional Geographic Information System.
+	\item .MAPs juga diidentifikasi sebagai peta warna. Contoh perangkat lunak semacam itu yang mendukung file peta adalah visualisasi musik G-Force SoundSpectrum.
+	\item Bentuk lain dari file .MAP adalah untuk peta gambar HTML. Peta gambar diformat dalam HTML dan membuat area yang dapat diklik pada gambar yang disediakan.
+	\item .map file juga digunakan oleh Multi Theft Auto: San Andreas, modifikasi multiplayer untuk Grand Theft Auto: San Andreas.
 \end{itemize}
 
 \subsection{ketentuan penulisan mapfile}
 File yang disebut mapfile tersebut memiliki ketentuan-ketentuan penulisan sebagai berikut:
 \begin{itemize}
-\item Teks pada mapfile tidak bersifat case-sensitive.
-\item Penulisan string yang berisi campuran beberapa karakter non-alphanumerik (selain karakter huruf dan angka) atau keywords milik MapServer harus diapit oleh tanda petik ganda ( “ ).
-\item Setiap mapfile dapat digunakan untuk mendefinisikan (secara default) maksimal 50 layer peta.
-\item Penulisan path lokasi file bisa dilakukan secara absolut maupun relatif.
-\item Isi mapfile memiliki hierarki struktur dengan objek “MAP” sebagai “root”. Sementara objek-objek lainnya berada di bawah objek ini.
-\item Pengguna dapat menambahkan baris-baris komentar di dalam mapfile dengan cara mengawali komentar tersebut dengan karakter pagar (#).
-\item Atribut (field) ditulis didalam kurung siku [] (casesensitive)
-\item Dimulai dengan keyword MAP sebagai puncak hierarki
-
+	\item Teks pada mapfile tidak bersifat case-sensitive.
+	\item Penulisan string yang berisi campuran beberapa karakter non-alphanumerik (selain karakter huruf dan angka) atau keywords milik MapServer harus diapit oleh tanda petik ganda ( “ ).
+	\item Setiap mapfile dapat digunakan untuk mendefinisikan (secara default) maksimal 50 layer peta.
+	\item Penulisan path lokasi file bisa dilakukan secara absolut maupun relatif.
+	\item Isi mapfile memiliki hierarki struktur dengan objek “MAP” sebagai “root”. Sementara objek-objek lainnya berada di bawah objek ini.
+	\item Pengguna dapat menambahkan baris-baris komentar di dalam mapfile dengan cara mengawali komentar tersebut dengan karakter pagar (#).
+	\item Atribut (field) ditulis didalam kurung siku [] (casesensitive)
+	\item Dimulai dengan keyword MAP sebagai puncak hierarki
+	\item Untuk MapServer versi <5, ada default maksimum 200 layer per mapfile, sedangkan untuk MapServer versi >=5 todak ada batasan layer. Hal ini dapat diubah dengan mengedit file map.h untuk merubah value dari MS_MAXLAYERS menjadi ke jumlah yang diinginkan dengan meng-compile ulang. Berikut adalah batas default lainnya saat menggunakan MapServer <5:
+		\begin{itemize}
+			\item MAXCLASSES 250 (set in map.h)
+			\item MAXSTYLES 5 (set in map.h)
+			\item MAXSYMBOLS 64 (set in mapsymbol.h)
+		\end{itemize}
+		MapServer versi >=5 tidak ada limit untuk class. style, symbol, atau layer.
+			
+\end{itemize}
 
 \subsection{Hirarki Mapfile}
 “MAP” merupakan “root”, diikuti objek lain, setiap blok harus diakhiri dengan “END”, 
