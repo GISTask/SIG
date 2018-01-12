@@ -1,7 +1,9 @@
-\section{Introduction}
+﻿\section{Introduction}
 
-Untuk memanfaatkan fungsionalitasnya, MapServer akan membutuhkan sebuah mapfile. Mapfile merupakan file teks yang berekstensi .map, yang akan mendeskripsikan apa dan dimana sumber data dan bagaimana cara data tersebut ditampilkan. 
-File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. Informasi yang termuat didalamnya adalah layer data apa yang akan digambar, dimana focus geografis petanya, 
+Untuk memanfaatkan fungsionalitasnya, MapServer akan membutuhkan sebuah mapfile. Mapfile merupakan file teks yang berekstensi .map,
+yang akan mendeskripsikan apa dan dimana sumber data dan bagaimana cara data tersebut ditampilkan. 
+File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. 
+Informasi yang termuat didalamnya adalah layer data apa yang akan digambar, dimana focus geografis petanya, 
 system proyeksi yang digunakan, format apa yang akan digunakan untuk menampilkan gambar, dan cara menentukan legenda dan skala pada peta.
 
 contoh :
@@ -38,14 +40,16 @@ END # MAP
 \end{verbatim}
 
 \subsection(Tentang MapFile}
-Map File adalah sebuah file konfigurasi teks terstruktur untuk aplikasi MapServer kita. Ini dapat mendefinisikan area peta yang kita buat, memberi tahu program MapServer tempat data kita berada dan di mana menampilkan gambar. 
+Map File adalah sebuah file konfigurasi teks terstruktur untuk aplikasi MapServer kita. Ini dapat mendefinisikan area peta yang kita buat, 
+memberi tahu program MapServer tempat data kita berada dan di mana menampilkan gambar. 
 Map File ini juga mendefinisikan lapisan peta kita, termasuk sumber data, proyeksi, dan simbologinya. 
 Map File ini harus memiliki ekstensi peta atau MapServer tidak akan mengenalinya.
 File .map juga bisa digunakan untuk.
 \begin{itemize}
 \item Debugging maps. ini adalah tipe dari plain text atau teks biasa yang menunjukan offset fungsi relatif untuk versi biner tertentu.
 \item Uncompiled Quake maps. File-file ini adalah file teks biasa.
-\item Valve's Hammer Editor menyimpan file tingkat dalam format biner, proprietary .rmf atau text-based, yang dapat dibaca manusia. Sebelum versi 4.0.
+\item Valve's Hammer Editor menyimpan file tingkat dalam format biner, proprietary .rmf atau text-based, yang dapat dibaca manusia. 
+Sebelum versi 4.0.
 \item Selain itu, serial Halo menggunakan file peta untuk level. Duke Nukem 3D menggunakan file peta untuk level buatan pengguna.
 \item .map file juga digunakan oleh MapInfo Professional Geographic Information System.
 \item .MAPs juga diidentifikasi sebagai peta warna. Contoh perangkat lunak semacam itu yang mendukung file peta adalah visualisasi musik G-Force SoundSpectrum.
@@ -80,7 +84,8 @@ END
 
 \section{MAP Object}
 \subsection (Tentang MAP Object)
-MAP merupakan objek master sebagai wadah menyimpan semua objek lain didalamnya dan tempat mendefinisikan objek dan parameter peta/aplikasi seperti, config, datapattern, debug, status, units, size, extent, fontset, imagecolor, layer, legend, dll.
+MAP merupakan objek master sebagai wadah menyimpan semua objek lain didalamnya dan tempat mendefinisikan objek dan parameter 
+peta/aplikasi seperti, config, datapattern, debug, status, units, size, extent, fontset, imagecolor, layer, legend, dll.
 EXTENT adalah output batas dalam unit dari output peta.
 
 \subsection (contoh)
@@ -104,7 +109,10 @@ EXTENT adalah output batas dalam unit dari output peta.
 \section{Layer Object}
 
 \subsection (CLASS)
-CLASS adalah Sinyal awal dari kelas object. Di dalam lapisan, hanya dengan satu kelas aka digunakan untuk render fitur.  Setiap fitur diuji untuk setiap kelas dalam rangka dimana mereka didefinisikan dalam mapfile.  Kelas pertama yang tidak kalah dengan bi min / max skala ikatan dan ekspresi memeriksa untuk arus fitur akan digunakan untuk render.  Class terbagi antara dua yaitu :
+CLASS adalah Sinyal awal dari kelas object. Di dalam lapisan, hanya dengan satu kelas aka digunakan untuk render fitur.  
+Setiap fitur diuji untuk setiap kelas dalam rangka dimana mereka didefinisikan dalam mapfile.  
+Kelas pertama yang tidak kalah dengan bi min / max skala ikatan dan ekspresi memeriksa untuk arus fitur akan digunakan untuk render.  
+Class terbagi antara dua yaitu :
 
   \subsubsection (CLASSGROUP atau string)
   Tentukan kelas group yang akan dipertimbangkan dalam render waktu. Object classgroup parameter harus digunakan dalam kombinasi dengan classgroup.
