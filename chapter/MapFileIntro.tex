@@ -56,6 +56,7 @@ File .map juga bisa digunakan untuk.
 	\item .map file juga digunakan oleh Multi Theft Auto: San Andreas, modifikasi multiplayer untuk Grand Theft Auto: San Andreas.
 \end{itemize}
 
+
 \subsection{ketentuan penulisan mapfile}
 File yang disebut mapfile tersebut memiliki ketentuan-ketentuan penulisan sebagai berikut:
 
@@ -89,6 +90,15 @@ END
 MAP merupakan objek master sebagai wadah menyimpan semua objek lain didalamnya dan tempat mendefinisikan objek dan parameter 
 peta/aplikasi seperti, config, datapattern, debug, status, units, size, extent, fontset, imagecolor, layer, legend, dll.
 EXTENT adalah output batas dalam unit dari output peta.
+SIZE adalah  lebar dan tinggi peta gambar dalam piksel.
+IMAGECOLOR adalah gambar warna latar belakang.
+
+\subsection (ANGLE double)
+Angle diberikan dalam derajat , untuk memutar peta .Default adalah 0 .Peta akan memutar yang diberikan searah jarum jam .Berikut ini adalah catatan penting:
+\begin{itemize}
+	\item Membutuhkan sebuah PROJECTION OBJECT dispesifikasikan di MAP LEVEL dan untuk setiap LAYER OBJECT ( bahkan jika semua lapisan yang di proyeksi ) yang sama.
+	\item Membutuhkan MapScript (SWIG, PHP MapScript) tidak bekerja dengan CGI mode.
+\end {itemize}
 
 \subsection{contoh}
 	\begin{verbatim}
