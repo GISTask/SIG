@@ -88,8 +88,11 @@ File yang disebut mapfile tersebut memiliki ketentuan-ketentuan penulisan sebaga
 	\item Dimulai dengan keyword MAP sebagai puncak hierarki
 	\item Untuk MapServer sebelum versi 5, ada default maksimum 200 layer per mapfile, 
 	      sedangkan untuk MapServer versi 5 atau lebih tidak ada batasan layer. 
-              Hal ini dapat diubah dengan mengedit file map.h untuk merubah value dari MSMAXLAYERS menjadi ke jumlah yang diinginkan.	
-\end{itemize}
+              Hal ini dapat diubah dengan mengedit file map.h untuk merubah value dari MSMAXLAYERS menjadi ke jumlah yang diinginkan.
+	\item file path dapat diberikan sebagai path yang absolut, atau sebagai path yang relatif terhadap lokasi mapfile. Selain itu, file data mungkin ditentukan relatif terhadap SHAPEPATH.
+	\item Mapfile diharapkan bisa dikodekan UTF-8. Mapfile yang dikodekan UTF-8 tidak perlu dikodekan ke UTF-8. (pada versi 7)
+	\item Atribut diberi nama dengan menggunakan sintaks berikut: [ATTRIBUTENAME].			  
+	\end{itemize}
 
 \subsection{Hirarki Mapfile}
 ``MAP`` merupakan ``root``, diikuti objek lain, setiap blok harus diakhiri dengan ``END``, 
