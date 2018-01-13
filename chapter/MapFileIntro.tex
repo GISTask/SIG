@@ -42,7 +42,18 @@ END # MAP
 \subsection{Komponen-komponen Utama Mapserver}
 Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang diberikan oleh user. Komponen kuncinya adalah MapServer executable yang terdiri dari CGI program, file peta, sumber data dan output gambar. Semua komponen mapserver ini bekerja bersama-sama, setelah user melakukan request/perminataan maka CGI akan mengakses file peta, menggambarkan informasi yang didapat dari sumber data dan kembali menampilkannya pada peta.
 	\subsubsection {Mapserver Executable}
-		Secara sederhana MapServer menjalankan executable applikasi CGI pada web server yang secara teknis merupakan proses 		stateless berbasis pada HTTP. Stateless adalah sebuah proses permintaan yang dilanjutkan dengan stop running. Applikasi CGI 		menerima permintaan dari web server, kemudian proses dilakukan dan mengembalikan respon atau data ke web server. CGI bekerja 		sangat sederhana tidak diperlukan sebuah pemrograman untuk dapat menggunakannya. Kita tinggal melakukan edit berdasarkan text 		base, konfigurasi runtime file, membuat halaman web, dan menempatkannya bekerja pada web server.
+		Secara sederhana MapServer menjalankan executable applikasi CGI pada web server yang secara teknis merupakan proses
+ 		stateless berbasis pada HTTP. Stateless adalah sebuah proses permintaan yang dilanjutkan dengan stop running. Applikasi CGI 		
+		menerima permintaan dari web server, kemudian proses dilakukan dan mengembalikan respon atau data ke web server. CGI bekerja 		
+		sangat sederhana tidak diperlukan sebuah pemrograman untuk dapat menggunakannya. Kita tinggal melakukan edit berdasarkan text base,
+		konfigurasi runtime file, membuat halaman web, dan menempatkannya bekerja pada web server.
+
+\subsection{Cara Kerja Mapserver}
+Map Server bekerja secara berdampingan dengan applikasi web server. Web Server menerima request peta melalui MapServer. 
+MapServer mengenerate request terhadap peta dan mengirimkannya ke web server,
+Fungsi utama dari MapServer adalah melakukan pembacaan data dari banyak sumber dan menempatkannya kedalam layer-layer secara bersamaan menjadi file graphic.
+Salah satu layernya bisa saja berupa gambar satelit. Setiap layer saling overlay satu dengan lainnya dan ditampilkan kedalam web browser.
+Proses pengambaran peta (rendering) muncul setiap kali permintaan terhadap peta baru yang dilakukan oleh Mapserver termasuk ketika user melakukan level zoom terhadap tampilan peta.
 
 \subsection{Tentang MapFile}
 Map File adalah sebuah file konfigurasi teks terstruktur untuk aplikasi MapServer kita. Ini dapat mendefinisikan area peta yang kita buat, 
@@ -139,7 +150,7 @@ Class terbagi antara dua yaitu :
   \subsubsection{CLUSTER}
   Sinyal awal dari cluster objek. Konfigurasi cluster menyediakan untuk menggabungkan beberapa fitur dari lapisan menjadi satu ( dikumpulkan ) fitur  hanya berdasarkan relatif posisi. Hanya didukung untuk point layers.
   \subsubsection{COMPOSITE}
-  Satu atau lebih blok KOMPOSIT dapat digunakan untuk memberi sinyal bahwa rendering harus dilakukan sementara dan digabungkan ke gambar peta akhir. 
-  Opsi yang didefinisikan di dalam blok KOMPOSIT akan menentukan bagaimana penggabungan ini harus dilakukan (mis. Dengan menerapkan opacity, composition operator, atau filter piksel).
+  Satu atau lebih blok composite dapat digunakan untuk memberi sinyal bahwa rendering harus dilakukan sementara dan digabungkan ke gambar peta akhir. 
+  Opsi yang didefinisikan di dalam blok composit akan menentukan bagaimana penggabungan ini harus dilakukan (mis. Dengan menerapkan opacity, composition operator, atau filter piksel).
   
 
