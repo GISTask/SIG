@@ -70,6 +70,7 @@ File .map juga bisa digunakan untuk.
 	\item .MAPs juga diidentifikasi sebagai peta warna. Contoh perangkat lunak semacam itu yang mendukung file peta adalah visualisasi musik G-Force SoundSpectrum.
 	\item Bentuk lain dari file .MAP adalah untuk peta gambar HTML. Peta gambar diformat dalam HTML dan membuat area yang dapat diklik pada gambar yang disediakan.
 	\item .map file juga digunakan oleh Multi Theft Auto: San Andreas, modifikasi multiplayer untuk Grand Theft Auto: San Andreas.
+
 \end{itemize}
 
 
@@ -110,12 +111,19 @@ EXTENT adalah output batas dalam unit dari output peta.
 SIZE adalah  lebar dan tinggi peta gambar dalam piksel.
 IMAGECOLOR adalah gambar warna latar belakang.
 
-\subsection (ANGLE double)
+\subsubsection (ANGLE double)
 Angle diberikan dalam derajat , untuk memutar peta .Default adalah 0 .Peta akan memutar yang diberikan searah jarum jam .Berikut ini adalah catatan penting:
 \begin{itemize}
 	\item Membutuhkan sebuah PROJECTION OBJECT dispesifikasikan di MAP LEVEL dan untuk setiap LAYER OBJECT ( bahkan jika semua lapisan yang di proyeksi ) yang sama.
 	\item Membutuhkan MapScript (SWIG, PHP MapScript) tidak bekerja dengan CGI mode.
+	\item Jika dengan menggunakan LABEL OBJECT atau LAYER OBJECT LABELANGLEITEM parameter tersebut baik, parameter ini yang relatif terhapat peta orientasi.
 \end {itemize}
+
+\subsubsection (CONFIG [key] [value])
+Hal ini dapat digunakan untuk menentukan nilai di beberapa run-time, untuk kedua mapserver dan GDAL atau OGR libraries. Pengembang: nilai-nilai akan di sampaikan CPLSetConfigOption(). Pilihan berikut tersedia khusus untuk mapserver.
+\begin {itemize}
+	\item CGI_CONTEXT_URL [value] yaitu parameter konfigurasinya dapat digunakan untuk memungkinkan memuat peta konteks dari sebuah URL.
+	\item MS_ENCRYPTION_KEY [filename] yaitu parameter konfigurasinya dapat digunakan untuk menspesifikasikan sebuah kunci enkripsi yang digunakan dengan mapserver.
 
 \subsection{contoh}
 	\begin{verbatim}
