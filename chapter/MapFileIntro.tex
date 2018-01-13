@@ -144,6 +144,9 @@ Hal ini dapat digunakan untuk menentukan nilai di beberapa run-time, untuk kedua
 	END # MAP
 	\end{verbatim}
 \section{Layer Object}
+Sering digunakan ini mendefinisikan layer-layer yang kemudian membentuk tampilan peta dijitalnya. Layer-layer digambarkan sesuai dengan urutan kemunculannya
+\(penulisan\) di dalam mapfile terkait. Dengan demikian, layer pertama akan diletakkan di dasar sehingga tampilannya bisa tertutupi oleh tampilan layer 
+berikutnya. Sementara itu, layer yang terakhir \(ditulis paling bawah\) akan muncul paling atas dengan menutupi layer-layer yang berada di bawahnya.
 
 \subsection{CLASS}
 CLASS adalah Sinyal awal dari kelas object. Di dalam lapisan, hanya dengan satu kelas aka digunakan untuk render fitur.  
