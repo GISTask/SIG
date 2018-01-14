@@ -42,6 +42,16 @@ MAP
 END # MAP
 \end{verbatim}
 
+Contoh di atas dibangun pada struktur direktori berikut:
+
+\begin{itemize}
+
+\item Mapfile bisa ditempatkan dimana saja, asalkan bisa diakses ke server web. Biasanya, seseorang akan mencoba untuk tidak menempatkannya di lokasi yang membuatnya dapat diakses di web. Mari kita katakan itu ditempatkan di / home / msuser / mapfiles /
+\item Lokasi file font diberikan relatif terhadap peta file, dalam hal ini: /home/msuser/etc/fonts.txt
+\item Lokasi dataset (bluemarble.gif) diberikan relatif terhadap file file, dalam hal ini: / home / msuser / data /
+\item Lokasi file simbol diberikan relatif terhadap file, dalam hal ini: /home/msuser/etc/symbols.txt
+\item File yang dihasilkan oleh MapServer akan ditempatkan di direktori / ms4w / tmp / ms_tmp /. Server web harus bisa menempatkan file dalam direktori ini. Server web harus membuat direktori ini tersedia sebagai / ms_tmp (jika server web ada di www.ms.org, alamat web ke direktori harus: httpd: //www.ms.org/ms_tmp/.
+\end{itemize}
 \subsection{Tentang MapFile}
 Map File adalah sebuah file konfigurasi teks terstruktur untuk aplikasi MapServer kita. Ini dapat mendefinisikan area peta yang kita buat, 
 memberi tahu program MapServer tempat data kita berada dan di mana menampilkan gambar. 
