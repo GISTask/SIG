@@ -9,32 +9,34 @@ system proyeksi yang digunakan, format apa yang akan digunakan untuk menampilkan
 contoh :
 \begin{verbatim}
 MAP
-    NAME "Bandung"
+    NAME Bandung
     STATUS ON
     SIZE 600 400
-    SYMBOLSET "../etc/symbols.txt"
+    #SYMBOLSET "../data/etc/symbols.sym"
     EXTENT 107.474 -7.007 107.735 -6.773
     UNITS DD
-    SHAPEPATH "../bandung"
-    IMAGECOLOR 255 255 255
-    FONTSET "../etc/fonts.txt"
+    SHAPEPATH "../data/bandung"
+	IMAGETYPE JPEG
+    IMAGECOLOR 108 166 205
+    #FONTSET "../data/etc/fonts.txt"
 
     #
     # Start of web interface definition
     #
     WEB
-        IMAGEPATH "/ms4w/tmp/ms_tmp/"
-        IMAGEURL "/ms_tmp/"
+		IMAGEPATH "/ms4w/apps/bandung/tmp/" 
+		IMAGEURL "/bandung/tmp/"
     END # WEB
 
     #
     # Start of layer definitions
     #
+	
     LAYER
-        NAME 'Bandung_Polygon'
+        NAME Bandung
         TYPE POLYGON
         STATUS DEFAULT
-        DATA band.png
+        DATA "bandung_indonesia_osm_polygon.shp"
     END # LAYER
 END # MAP
 \end{verbatim}
