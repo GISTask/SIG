@@ -1,4 +1,5 @@
-﻿\section{Introduction}
+
+\section{Introduction}
 
 Untuk memanfaatkan fungsionalitasnya, MapServer akan membutuhkan sebuah mapfile. Mapfile merupakan file teks yang berekstensi .map,
 yang akan mendeskripsikan apa dan dimana sumber data dan bagaimana cara data tersebut ditampilkan. 
@@ -47,6 +48,7 @@ memberi tahu program MapServer tempat data kita berada dan di mana menampilkan g
 Map File ini juga mendefinisikan lapisan peta kita, termasuk sumber data, proyeksi, dan simbologinya. 
 Map File ini harus memiliki ekstensi peta atau MapServer tidak akan mengenalinya.
 File .map juga bisa digunakan untuk.
+
 \begin{itemize}
 	\item Debugging maps. ini adalah tipe dari plain text atau teks biasa yang menunjukan offset fungsi relatif untuk versi biner tertentu.
 	\item Uncompiled Quake maps. File-file ini adalah file teks biasa.
@@ -56,17 +58,18 @@ File .map juga bisa digunakan untuk.
 	\item .MAPs juga diidentifikasi sebagai peta warna. Contoh perangkat lunak semacam itu yang mendukung file peta adalah visualisasi musik G-Force SoundSpectrum.
 	\item Bentuk lain dari file .MAP adalah untuk peta gambar HTML. Peta gambar diformat dalam HTML dan membuat area yang dapat diklik pada gambar yang disediakan.
 	\item .map file juga digunakan oleh Multi Theft Auto: San Andreas, modifikasi multiplayer untuk Grand Theft Auto: San Andreas.
-
 \end{itemize}
 
 \subsection{Komponen-komponen Utama Mapserver}
 Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang diberikan oleh user. Komponen kuncinya adalah MapServer executable yang terdiri dari CGI program, file peta, sumber data dan output gambar. Semua komponen mapserver ini bekerja bersama-sama, setelah user melakukan request/perminataan maka CGI akan mengakses file peta, menggambarkan informasi yang didapat dari sumber data dan kembali menampilkannya pada peta.
+
 	\subsubsection {Mapserver Executable}
 		Secara sederhana MapServer menjalankan executable applikasi CGI pada web server yang secara teknis merupakan proses
  		stateless berbasis pada HTTP. Stateless adalah sebuah proses permintaan yang dilanjutkan dengan stop running. Applikasi CGI 		
 		menerima permintaan dari web server, kemudian proses dilakukan dan mengembalikan respon atau data ke web server. CGI bekerja 		
 		sangat sederhana tidak diperlukan sebuah pemrograman untuk dapat menggunakannya. Kita tinggal melakukan edit berdasarkan text base,
 		konfigurasi runtime file, membuat halaman web, dan menempatkannya bekerja pada web server.
+		
 	\subsubsection {MapServer MapFile}
 		MapServer seperti sebuah mesin yang membutuhkan bahan bakar untuk dapat bekerja dan membutuhkan system pengiriman (delivery system) bahan bakar untuk mencapai mesin . 
 		Program MapServer perlu mengetahui layer peta yang akan digambar, bagaimana menggambarkannya, dan dimana lokasi sumber datanya. 
@@ -74,6 +77,7 @@ Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang dib
 		File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. 
 		Informasi yang termuat didalamnya adalah layer data apa yang akan digambar, dimana focus geografis petanya, system proyeksi yang digunakan, 
 		format apa yang akan digunakan untuk menampilkan gambar, dan cara menentukan legenda dan skala pada peta.
+		
 	\subsubsection{ketentuan penulisan mapfile}
 		File yang disebut mapfile tersebut memiliki ketentuan-ketentuan penulisan sebagai berikut:
 
@@ -114,7 +118,7 @@ END
 \end{verbatim}
 
 
-\section{MAP Object}
+\section {MAP Object}
 \subsection{Tentang MAP Object}
 MAP merupakan objek master sebagai wadah menyimpan semua objek lain didalamnya dan tempat mendefinisikan objek dan parameter 
 peta/aplikasi seperti, config, datapattern, debug, status, units, size, extent, fontset, imagecolor, layer, legend, dll.
@@ -124,10 +128,13 @@ IMAGECOLOR adalah gambar warna latar belakang.
 
 \subsubsection (ANGLE double)
 Angle diberikan dalam derajat , untuk memutar peta .Default adalah 0 .Peta akan memutar yang diberikan searah jarum jam .Berikut ini adalah catatan penting:
-\begin{itemize}
+\begin {itemize}
 	\item Membutuhkan sebuah PROJECTION OBJECT dispesifikasikan di MAP LEVEL dan untuk setiap LAYER OBJECT ( bahkan jika semua lapisan yang di proyeksi ) yang sama.
 	\item Membutuhkan MapScript (SWIG, PHP MapScript) tidak bekerja dengan CGI mode.
 	\item Jika dengan menggunakan LABEL OBJECT atau LAYER OBJECT LABELANGLEITEM parameter tersebut baik, parameter ini yang relatif terhapat peta orientasi.
+	\item MS_ERRORFILE [filename] yaitu parameter konfigurasinya dapat digunakan untuk menulis error MAPfile pada sebuah file. 
+	\item MS_NONSQUARE [yes|no] yaitu parameter konfigurasinya dapat digunakan untuk Memungkinkan non-square piksel. For “MS_NONSQUARE” “yes” to work, the MAP, and LAYER akan memiliki PROJECTION object.
+	\item ON_MISSING_DATA [FAIL|LOG|IGNORE] yaitu parameter konfigurasinya dapat digunakan untuk memberitahu MAPServer bagaimana menangani hilang data dalam tile index. Sebelumnya versi MAPServer harus compile-time switch (“IGNORE_MISSING_DATA”), tapi ini tidak lagi diperlukan.
 \end {itemize}
 
 \subsubsection (CONFIG [key] [value])
