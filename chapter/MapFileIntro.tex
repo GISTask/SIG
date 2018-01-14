@@ -1,4 +1,5 @@
 
+
 \section{Introduction}
 
 Untuk memanfaatkan fungsionalitasnya, MapServer akan membutuhkan sebuah mapfile. Mapfile merupakan file teks yang berekstensi .map,
@@ -80,8 +81,7 @@ Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang dib
 		sangat sederhana tidak diperlukan sebuah pemrograman untuk dapat menggunakannya. Kita tinggal melakukan edit berdasarkan text base,
 		konfigurasi runtime file, membuat halaman web, dan menempatkannya bekerja pada web server.
 		
-	\subsubsection {MapServer MapFile}
-		MapServer seperti sebuah mesin yang membutuhkan bahan bakar untuk dapat bekerja dan membutuhkan system pengiriman (delivery system) bahan bakar untuk mencapai mesin . 
+	\subsubsection {MapServer MapFile}		MapServer seperti sebuah mesin yang membutuhkan bahan bakar untuk dapat bekerja dan membutuhkan system pengiriman (delivery system) bahan bakar untuk mencapai mesin . 
 		Program MapServer perlu mengetahui layer peta yang akan digambar, bagaimana menggambarkannya, dan dimana lokasi sumber datanya. 
 		Data merupakan bahan bakarnya dan file peta atau .map.file merupakan system pengirimannya (delivery system). 
 		File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. 
@@ -142,9 +142,6 @@ Angle diberikan dalam derajat , untuk memutar peta .Default adalah 0 .Peta akan 
 	\item Membutuhkan sebuah PROJECTION OBJECT dispesifikasikan di MAP LEVEL dan untuk setiap LAYER OBJECT ( bahkan jika semua lapisan yang di proyeksi ) yang sama.
 	\item Membutuhkan MapScript (SWIG, PHP MapScript) tidak bekerja dengan CGI mode.
 	\item Jika dengan menggunakan LABEL OBJECT atau LAYER OBJECT LABELANGLEITEM parameter tersebut baik, parameter ini yang relatif terhapat peta orientasi.
-	\item MS_ERRORFILE [filename] yaitu parameter konfigurasinya dapat digunakan untuk menulis error MAPfile pada sebuah file. 
-	\item MS_NONSQUARE [yes|no] yaitu parameter konfigurasinya dapat digunakan untuk Memungkinkan non-square piksel. For “MS_NONSQUARE” “yes” to work, the MAP, and LAYER akan memiliki PROJECTION object.
-	\item ON_MISSING_DATA [FAIL|LOG|IGNORE] yaitu parameter konfigurasinya dapat digunakan untuk memberitahu MAPServer bagaimana menangani hilang data dalam tile index. Sebelumnya versi MAPServer harus compile-time switch (“IGNORE_MISSING_DATA”), tapi ini tidak lagi diperlukan.
 \end {itemize}
 
 \subsubsection (CONFIG [key] [value])
@@ -152,6 +149,10 @@ Hal ini dapat digunakan untuk menentukan nilai di beberapa run-time, untuk kedua
 \begin {itemize}
 	\item CGI_CONTEXT_URL [value] yaitu parameter konfigurasinya dapat digunakan untuk memungkinkan memuat peta konteks dari sebuah URL.
 	\item MS_ENCRYPTION_KEY [filename] yaitu parameter konfigurasinya dapat digunakan untuk menspesifikasikan sebuah kunci enkripsi yang digunakan dengan mapserver.
+	\item MS_ERRORFILE [filename] yaitu parameter konfigurasinya dapat digunakan untuk menulis error MAPfile pada sebuah file. 
+	\item MS_NONSQUARE [yes|no] yaitu parameter konfigurasinya dapat digunakan untuk Memungkinkan non-square piksel. For “MS_NONSQUARE” “yes” to work, the MAP, and LAYER akan memiliki PROJECTION object.
+	\item ON_MISSING_DATA [FAIL|LOG|IGNORE] yaitu parameter konfigurasinya dapat digunakan untuk memberitahu MAPServer bagaimana menangani hilang data dalam tile index. Sebelumnya versi MAPServer harus compile-time switch (“IGNORE_MISSING_DATA”), tapi ini tidak lagi diperlukan.
+\end {itemize}
 
 \subsection{contoh}
 	\begin{verbatim}
