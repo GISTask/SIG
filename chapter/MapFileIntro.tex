@@ -47,11 +47,11 @@ Contoh di atas dibangun pada struktur direktori berikut:
 
 \begin{itemize}
 
-\item Mapfile bisa ditempatkan dimana saja, asalkan bisa diakses ke server web. Biasanya, seseorang akan mencoba untuk tidak menempatkannya di lokasi yang membuatnya dapat diakses di web. Mari kita katakan itu ditempatkan di / home / msuser / mapfiles /
-\item Lokasi file font diberikan relatif terhadap peta file, dalam hal ini: /home/msuser/etc/fonts.txt
-\item Lokasi dataset (bluemarble.gif) diberikan relatif terhadap file file, dalam hal ini: / home / msuser / data /
-\item Lokasi file simbol diberikan relatif terhadap file, dalam hal ini: /home/msuser/etc/symbols.txt
-\item File yang dihasilkan oleh MapServer akan ditempatkan di direktori / ms4w / tmp / ms_tmp /. Server web harus bisa menempatkan file dalam direktori ini. Server web harus membuat direktori ini tersedia sebagai / ms_tmp (jika server web ada di www.ms.org, alamat web ke direktori harus: httpd: //www.ms.org/ms_tmp/.
+\item Mapfile bisa ditempatkan dimana saja, asalkan bisa diakses ke server web. Biasanya, seseorang akan mencoba untuk tidak menempatkannya di lokasi yang membuatnya dapat diakses di web.
+\item Lokasi file font diberikan relatif terhadap peta file
+\item Lokasi dataset  bluemarble.gif  diberikan relatif terhadap file file
+\item Lokasi file simbol diberikan relatif terhadap file
+\item File yang dihasilkan oleh MapServer akan ditempatkan di direktori mstmp . Server web harus bisa menempatkan file dalam direktori ini. Server web harus membuat direktori ini tersedia sebagai mstmp  jika server web ada di www.ms.org, alamat web ke direktori.
 \end{itemize}
 
 \subsection{Tentang MapFile}
@@ -75,16 +75,16 @@ File .map juga bisa digunakan untuk.
 \subsection{Komponen-komponen Utama Mapserver}
 Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang diberikan oleh user. Komponen kuncinya adalah MapServer executable yang terdiri dari CGI program, file peta, sumber data dan output gambar. Semua komponen mapserver ini bekerja bersama-sama, setelah user melakukan request/perminataan maka CGI akan mengakses file peta, menggambarkan informasi yang didapat dari sumber data dan kembali menampilkannya pada peta.
 
-	\subsubsection {Mapserver Executable}
+	\subsubsection{Mapserver Executable}
 		Secara sederhana MapServer menjalankan executable applikasi CGI pada web server yang secara teknis merupakan proses
  		stateless berbasis pada HTTP. Stateless adalah sebuah proses permintaan yang dilanjutkan dengan stop running. Applikasi CGI 		
 		menerima permintaan dari web server, kemudian proses dilakukan dan mengembalikan respon atau data ke web server. CGI bekerja 		
 		sangat sederhana tidak diperlukan sebuah pemrograman untuk dapat menggunakannya. Kita tinggal melakukan edit berdasarkan text base,
 		konfigurasi runtime file, membuat halaman web, dan menempatkannya bekerja pada web server.
 		
-	\subsubsection {MapServer MapFile}		MapServer seperti sebuah mesin yang membutuhkan bahan bakar untuk dapat bekerja dan membutuhkan system pengiriman (delivery system) bahan bakar untuk mencapai mesin . 
+	\subsubsection{MapServer MapFile}		MapServer seperti sebuah mesin yang membutuhkan bahan bakar untuk dapat bekerja dan membutuhkan system pengiriman  delivery system  bahan bakar untuk mencapai mesin . 
 		Program MapServer perlu mengetahui layer peta yang akan digambar, bagaimana menggambarkannya, dan dimana lokasi sumber datanya. 
-		Data merupakan bahan bakarnya dan file peta atau .map.file merupakan system pengirimannya (delivery system). 
+		Data merupakan bahan bakarnya dan file peta atau .map.file merupakan system pengirimannya  delivery system . 
 		File Peta adalah text konfigurasi yang terdiri dari list setting yang digunakan untuk menggambar dan berinteraksi dengan peta. 
 		Informasi yang termuat didalamnya adalah layer data apa yang akan digambar, dimana focus geografis petanya, system proyeksi yang digunakan, 
 		format apa yang akan digunakan untuk menampilkan gambar, dan cara menentukan legenda dan skala pada peta.
@@ -94,19 +94,19 @@ Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang dib
 
 		\begin{itemize}
 			\item Teks pada mapfile tidak bersifat case-sensitive.
-			\item Penulisan string yang berisi campuran beberapa karakter non-alphanumerik (selain karakter huruf dan angka) atau keywords milik MapServer harus diapit oleh tanda petik ganda .
-			\item Setiap mapfile dapat digunakan untuk mendefinisikan (secara default) maksimal 50 layer peta.
+			\item Penulisan string yang berisi campuran beberapa karakter non-alphanumerik  selain karakter huruf dan angka  atau keywords milik MapServer harus diapit oleh tanda petik ganda .
+			\item Setiap mapfile dapat digunakan untuk mendefinisikan secara default maksimal 50 layer peta.
 			\item Penulisan path lokasi file bisa dilakukan secara absolut maupun relatif.
-			\item Isi mapfile memiliki hierarki struktur dengan objek “MAP” sebagai “root”. Sementara objek-objek lainnya berada di bawah objek ini.
+			\item Isi mapfile memiliki hierarki struktur dengan objek ``MAP`` sebagai ``root``. Sementara objek-objek lainnya berada di bawah objek ini.
 			\item Pengguna dapat menambahkan baris-baris komentar di dalam mapfile dengan cara mengawali komentar tersebut dengan karakter pagar.
-			\item Atribut (field) ditulis didalam kurung siku [] (case sensitive)
+			\item Atribut field ditulis didalam kurung siku  case sensitive 
 			\item Dimulai dengan keyword MAP sebagai puncak hierarki
 			\item Untuk MapServer sebelum versi 5, ada default maksimum 200 layer per mapfile, 
 	      			sedangkan untuk MapServer versi 5 atau lebih tidak ada batasan layer. 
               			Hal ini dapat diubah dengan mengedit file map.h untuk merubah value dari MSMAXLAYERS menjadi ke jumlah yang diinginkan.
 			\item file path dapat diberikan sebagai path yang absolut, atau sebagai path yang relatif terhadap lokasi mapfile. Selain itu, file data mungkin ditentukan relatif terhadap SHAPEPATH.
-			\item Mapfile diharapkan bisa dikodekan UTF-8. Mapfile yang dikodekan UTF-8 tidak perlu dikodekan ke UTF-8. (pada versi 7)
-			\item Atribut diberi nama dengan menggunakan sintaks berikut: [ATTRIBUTENAME].			  
+			\item Mapfile diharapkan bisa dikodekan UTF-8. Mapfile yang dikodekan UTF-8 tidak perlu dikodekan ke UTF-8.  pada versi 7 
+			\item Atribut diberi nama dengan menggunakan sintaks berikut: ATTRIBUTENAME.			  
 		\end{itemize}
 
 \subsection{Cara Kerja Mapserver}
@@ -114,7 +114,7 @@ Map Server bekerja secara berdampingan dengan applikasi web server. Web Server m
 MapServer mengenerate request terhadap peta dan mengirimkannya ke web server,
 Fungsi utama dari MapServer adalah melakukan pembacaan data dari banyak sumber dan menempatkannya kedalam layer-layer secara bersamaan menjadi file graphic.
 Salah satu layernya bisa saja berupa gambar satelit. Setiap layer saling overlay satu dengan lainnya dan ditampilkan kedalam web browser.
-Proses pengambaran peta (rendering) muncul setiap kali permintaan terhadap peta baru yang dilakukan oleh Mapserver termasuk ketika user melakukan level zoom terhadap tampilan peta.
+Proses pengambaran peta rendering muncul setiap kali permintaan terhadap peta baru yang dilakukan oleh Mapserver termasuk ketika user melakukan level zoom terhadap tampilan peta.
 
 
 \subsection{Hirarki Mapfile}
@@ -129,7 +129,7 @@ END
 \end{verbatim}
 
 
-\section {MAP Object}
+\section{MAP Object}
 \subsection{Tentang MAP Object}
 MAP merupakan objek master sebagai wadah menyimpan semua objek lain didalamnya dan tempat mendefinisikan objek dan parameter 
 peta/aplikasi seperti, config, datapattern, debug, status, units, size, extent, fontset, imagecolor, layer, legend, dll.
@@ -137,23 +137,25 @@ EXTENT adalah output batas dalam unit dari output peta.
 SIZE adalah  lebar dan tinggi peta gambar dalam piksel.
 IMAGECOLOR adalah gambar warna latar belakang.
 
-\subsubsection (ANGLE double)
+\subsubsection{ANGLE double}
 Angle diberikan dalam derajat , untuk memutar peta .Default adalah 0 .Peta akan memutar yang diberikan searah jarum jam .Berikut ini adalah catatan penting:
-\begin {itemize}
-	\item Membutuhkan sebuah PROJECTION OBJECT dispesifikasikan di MAP LEVEL dan untuk setiap LAYER OBJECT ( bahkan jika semua lapisan yang di proyeksi ) yang sama.
-	\item Membutuhkan MapScript (SWIG, PHP MapScript) tidak bekerja dengan CGI mode.
+\begin{itemize}
+	\item Membutuhkan sebuah PROJECTION OBJECT dispesifikasikan di MAP LEVEL dan untuk setiap LAYER OBJECT   bahkan jika semua lapisan yang di proyeksi   yang sama.
+	\item Membutuhkan MapScript  SWIG, PHP MapScript  tidak bekerja dengan CGI mode.
 	\item Jika dengan menggunakan LABEL OBJECT atau LAYER OBJECT LABELANGLEITEM parameter tersebut baik, parameter ini yang relatif terhapat peta orientasi.
-\end {itemize}
+\end{itemize}
 
-\subsubsection (CONFIG [key] [value])
-Hal ini dapat digunakan untuk menentukan nilai di beberapa run-time, untuk kedua mapserver dan GDAL atau OGR libraries. Pengembang: nilai-nilai akan di sampaikan CPLSetConfigOption(). Pilihan berikut tersedia khusus untuk mapserver.
-\begin {itemize}
-	\item CGI_CONTEXT_URL [value] yaitu parameter konfigurasinya dapat digunakan untuk memungkinkan memuat peta konteks dari sebuah URL.
-	\item MS_ENCRYPTION_KEY [filename] yaitu parameter konfigurasinya dapat digunakan untuk menspesifikasikan sebuah kunci enkripsi yang digunakan dengan mapserver.
-	\item MS_ERRORFILE [filename] yaitu parameter konfigurasinya dapat digunakan untuk menulis error MAPfile pada sebuah file. 
-	\item MS_NONSQUARE [yes|no] yaitu parameter konfigurasinya dapat digunakan untuk Memungkinkan non-square piksel. For “MS_NONSQUARE” “yes” to work, the MAP, and LAYER akan memiliki PROJECTION object.
-	\item ON_MISSING_DATA [FAIL|LOG|IGNORE] yaitu parameter konfigurasinya dapat digunakan untuk memberitahu MAPServer bagaimana menangani hilang data dalam tile index. Sebelumnya versi MAPServer harus compile-time switch (“IGNORE_MISSING_DATA”), tapi ini tidak lagi diperlukan.
-\end {itemize}
+\subsubsection{CONFIG key value}
+Hal ini dapat digunakan untuk menentukan nilai di beberapa run-time, untuk kedua mapserver dan GDAL atau OGR libraries. Pengembang: nilai-nilai akan di sampaikan CPLSetConfigOption  . Pilihan berikut tersedia khusus untuk mapserver.
+
+\begin{itemize}
+	\item CGI CONTEXT URL value yaitu parameter konfigurasinya dapat digunakan untuk memungkinkan memuat peta konteks dari sebuah URL.
+	\item MS ENCRYPTION KEY filename yaitu parameter konfigurasinya dapat digunakan untuk menspesifikasikan sebuah kunci enkripsi yang digunakan dengan mapserver.
+	\item MS ERRORFILE filename yaitu parameter konfigurasinya dapat digunakan untuk menulis error MAPfile pada sebuah file. 
+	\item MS NONSQUARE yes atau no yaitu parameter konfigurasinya dapat digunakan untuk Memungkinkan non-square piksel. For ``MS NONSQUARE`` ``yes`` to work, the MAP, and LAYER akan memiliki PROJECTION object.
+	\item ON MISSING DATA FAIL LOG IGNORE yaitu parameter konfigurasinya dapat digunakan untuk memberitahu MAPServer bagaimana menangani hilang data dalam tile index. Sebelumnya versi MAPServer harus compile-time switch ``IGNORE MISSING DATA``, tapi ini tidak lagi diperlukan.
+
+\end{itemize}
 
 \subsection{contoh}
 	\begin{verbatim}
@@ -175,13 +177,13 @@ Hal ini dapat digunakan untuk menentukan nilai di beberapa run-time, untuk kedua
 	\end{verbatim}
 \section{Layer Object}
 Sering digunakan ini mendefinisikan layer-layer yang kemudian membentuk tampilan peta dijitalnya. Layer-layer digambarkan sesuai dengan urutan kemunculannya
-\(penulisan\) di dalam mapfile terkait. Dengan demikian, layer pertama akan diletakkan di dasar sehingga tampilannya bisa tertutupi oleh tampilan layer 
-berikutnya. Sementara itu, layer yang terakhir \(ditulis paling bawah\) akan muncul paling atas dengan menutupi layer-layer yang berada di bawahnya.
+penulisan di dalam mapfile terkait. Dengan demikian, layer pertama akan diletakkan di dasar sehingga tampilannya bisa tertutupi oleh tampilan layer 
+berikutnya. Sementara itu, layer yang terakhir ditulis paling bawah akan muncul paling atas dengan menutupi layer-layer yang berada di bawahnya.
 
 \subsection{CLASS}
 CLASS adalah Sinyal awal dari kelas object. Di dalam lapisan, hanya dengan satu kelas aka digunakan untuk render fitur.  
 Setiap fitur diuji untuk setiap kelas dalam rangka dimana mereka didefinisikan dalam mapfile.  
-Kelas pertama yang tidak kalah dengan bi min / max skala ikatan dan ekspresi memeriksa untuk arus fitur akan digunakan untuk render.  
+Kelas pertama yang tidak kalah dengan bi min atau max skala ikatan dan ekspresi memeriksa untuk arus fitur akan digunakan untuk render.  
 Class terbagi antara dua yaitu :
 
   \subsubsection{CLASSGROUP atau string}
@@ -189,9 +191,9 @@ Class terbagi antara dua yaitu :
   \subsubsection{CLASSITEM atau attribute}
   Item nama dalam atribut tabel yang akan digunakan untuk kelas lookups .
   \subsubsection{CLUSTER}
-  Sinyal awal dari cluster objek. Konfigurasi cluster menyediakan untuk menggabungkan beberapa fitur dari lapisan menjadi satu ( dikumpulkan ) fitur  hanya berdasarkan relatif posisi. Hanya didukung untuk point layers.
+  Sinyal awal dari cluster objek. Konfigurasi cluster menyediakan untuk menggabungkan beberapa fitur dari lapisan menjadi satu   dikumpulkan   fitur  hanya berdasarkan relatif posisi. Hanya didukung untuk point layers.
   \subsubsection{COMPOSITE}
   Satu atau lebih blok composite dapat digunakan untuk memberi sinyal bahwa rendering harus dilakukan sementara dan digabungkan ke gambar peta akhir. 
-  Opsi yang didefinisikan di dalam blok composit akan menentukan bagaimana penggabungan ini harus dilakukan (mis. Dengan menerapkan opacity, composition operator, atau filter piksel).
+  Opsi yang didefinisikan di dalam blok composit akan menentukan bagaimana penggabungan ini harus dilakukan  mis. Dengan menerapkan opacity, composition operator, atau filter piksel .
   
 
